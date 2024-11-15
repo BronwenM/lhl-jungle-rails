@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  include HttpBasicAuth
+  before_action :authenticate_admin_http_basic
 
   def index
     @products = Product.order(id: :desc).all
