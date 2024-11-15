@@ -1,3 +1,16 @@
-<h1>Admin Dashboard</h1>
-<p># of products <%= @product_count %></p>
-<p># of categories <%= @category_count %></p>
+<section class="admin-dashboard">
+  <header class="page-header admin-dashboard__header">
+    <h1>📈 Admin Dashboard</h1>
+  </header>
+
+  <div class="admin-dashboard__panel">
+    <p>Total Inventory:</p>
+    <h3><%= @product_count %></h3>
+  </div>
+  
+  <div class="admin-dashboard__panel">
+    <p>Number of Categories:</p>
+    <h3><%= @category_count %></h3>
+  </div>
+  <a class="btn btn-primary admin-dashboard__button" href="/admin/products">See Products</a>
+</section>
