@@ -1,0 +1,34 @@
+<section class="admin-catgories-index">
+
+  <header class="page-header">
+    <h1>Admin &raquo; All Categories</h1>
+  </header>
+
+  <div class="panel panel-default categories">
+    
+    <table class="table table-bordered table-hover">
+      <thead class="table-success">
+        <tr>
+          <th>Category</th>
+          <th># Units</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>TOTAL: </th>
+          <th colspan="2"><%= @categories.reduce(0) { |sum, category| sum + category.products.length} %></th>
+        </tr>
+      </tfoot>
+    </table>
+    
+  </div>
+  
+  <div class="well">
+    <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+  </div>
+
+</section>
