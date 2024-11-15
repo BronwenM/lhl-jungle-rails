@@ -6,10 +6,17 @@
       <span><%= humanized_money_with_symbol product.price %></span>
     </h1>
   <% end%>
-  <div>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
-    method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %> 
+  <div class="container">
+    <% if product.quantity == 0 %>
+      <div class="col-sm">
+        <span class="soldout" disabled aria-disabled="true">Sold Out</span>
+      </div>
     <% end %>
+    <div class="col-sm">
+      <%= button_to add_item_cart_path(product_id: product.id), class: "btn #{"disabled" unless product.quantity > 0}" ,
+      method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %> 
+      <% end %>
+    </div>
   </div>
 </article>
