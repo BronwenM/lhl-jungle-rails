@@ -1,0 +1,38 @@
+.admin-dashboard {
+  display: grid;
+  grid-template-areas: 
+    "header header" 
+    "panel-left panel-right"
+    "button .";
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  gap: 16px;
+}
+
+.admin-dashboard__header {
+  grid-area: header;
+}
+
+.admin-dashboard__panel {
+  padding: 64px;
+  border: 2px solid #b7b7b7;
+  border-radius: 8px;
+  text-align: center;
+
+  &:nth-of-type(1) {
+    grid-area: panel-left;
+  }
+
+  &:nth-of-type(2) {
+    grid-area: panel-right;
+  }
+
+  h3 {
+    font-size: 4rem;
+  }
+}
+
+.admin-dashboard__button {
+  grid-area: button;
+  width: 50%;
+  margin: 0 auto;
+}
