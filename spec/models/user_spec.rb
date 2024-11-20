@@ -52,7 +52,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should log in a valid user' do
-      expect(User.find_by(email: "marty@mcfly.tech")&.authenticate("delorean")).to eq(@user)
+      expect(User.authenticate_with_credentials("marty@mcfly.tech", "delorean")).to eq(@user)
     end
   end
 
