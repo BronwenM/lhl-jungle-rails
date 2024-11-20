@@ -37,6 +37,12 @@ RSpec.describe User, type: :model do
       
       expect(@user).to_not be_valid
     end
+
+    it 'password should have at least 6 characters' do
+      @user = User.create(name: "Marty", email: "marty@mcfly.tech", password: "del", password_confirmation: "del")
+      
+      expect(@user).to_not be_valid
+    end
     
   end
 
