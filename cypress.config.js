@@ -9,6 +9,9 @@ module.exports = defineConfig({
         /* ... */
       })
     },
+    baseUrl: "http://localhost:3001",
+    viewportHeight: 1280,
+    viewportWidth: 1920
   },
   screenshotsFolder: "tmp/cypress_screenshots",
   videosFolder: "tmp/cypress_videos",
