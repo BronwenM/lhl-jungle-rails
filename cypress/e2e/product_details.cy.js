@@ -12,5 +12,7 @@ describe("Product page", () => {
     cy.visit("/");
     cy.get(".products article [alt='Scented Blade']")
       .click();
+
+    cy.contains("Scented Blade").should("exist")
   });
 })
