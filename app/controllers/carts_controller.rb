@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
   def add_item
     product_id = params[:product_id].to_s
-    modify_cart_delta(product_id, +1)
+    modify_cart_delta(product_id, +1) unless Product.find(params[:product_id]).quantity == 0
 
     redirect_back fallback_location: root_path
   end
